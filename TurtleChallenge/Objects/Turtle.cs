@@ -7,11 +7,11 @@ namespace TurtleChallenge
     /// This class is used to create the turtle object which will perform the sequence of <see cref="Moves"/> on a
     /// <see cref="Board"/>.
     /// </summary>
-    public class Turtle 
+    public class Turtle
     {
-        public int TurtleCoordinateX { get; private set; }
-        public int TurtleCoordinateY { get; private set; }
-        public Direction Direction { get; private set; }
+        public int TurtleCoordinateX { get; set; }
+        public int TurtleCoordinateY { get; set; }
+        public Direction Direction { get; set; }
 
         /// <summary>
         /// The Turtle Construtctor takes the <see cref="Coordinates"/> and <see cref="TurtleChallenge.Direction"/> to instantiate the

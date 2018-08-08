@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExecuteGame.cs" />
+    <Compile Include="Game\ExecuteGame.cs" />
+    <Compile Include="Game\Player.cs" />
     <Compile Include="Objects\Board.cs" />
     <Compile Include="Objects\BoardBox.cs" />
     <Compile Include="Objects\ConfigurationsReader.cs" />
@@ -52,7 +53,6 @@
     <Compile Include="Objects\Moves.cs" />
     <Compile Include="Objects\Turtle.cs" />
     <Compile Include="Objects\Validation.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
