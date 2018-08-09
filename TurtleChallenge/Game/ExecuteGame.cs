@@ -20,10 +20,8 @@ namespace TurtleChallenge.Game
         /// <param name="moves">A list of sequential moves each run must perform on the turtle</param>
         /// <returns>A string describing the fate of the turtle</returns>
         public static string Execute(Board board, Turtle turtle, IEnumerable<Moves> moves)
-        {
-            var coordinates = new Coordinates {CoordinateX = turtle.Coordinates.CoordinateX, CoordinateY = turtle.Coordinates.CoordinateY};
-            
-            if (board.IsMine(coordinates))
+        {          
+            if (board.IsMine(turtle.Coordinates))
             {
                 return "Mine hit!";
             }
@@ -33,7 +31,7 @@ namespace TurtleChallenge.Game
                 return Execute(board, Player.PerformMove(turtle, moves.ElementAt(0)), moves.Skip(1));
             }
              
-            return board.IsExit(coordinates) ? "Success!" : "Still in danger!";
+            return board.IsExit(turtle.Coordinates) ? "Success!" : "Still in danger!";
         }
     }
 }

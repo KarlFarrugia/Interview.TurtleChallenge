@@ -24,14 +24,8 @@ namespace TurtleChallenge.Game
             switch (move)
             {
                 case Moves.M:
-                    if (Validation.ValidateTurtleMove(turtle))
-                    {
-                        return new Turtle(turtle.Move(), turtle.Direction);
-                    }
-                    else
-                    {
-                        throw new Exception("OUT OF BOARD");
-                    }
+                    if (Validation.ValidateTurtleMove(turtle)) return new Turtle(turtle.Move(), turtle.Direction);
+                    throw new Exception("OUT OF BOARD");                    
                 case Moves.L:
                     return new Turtle(turtle.Coordinates, turtle.RotateLeft());
                 case Moves.R:
