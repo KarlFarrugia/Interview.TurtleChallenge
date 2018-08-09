@@ -324,7 +324,7 @@ namespace UnitTests
         }
         
         /// <summary>
-        /// Tests that a turtle cannot move out of board.
+        /// Tests incorrect movement structure does crash system.
         /// </summary>    
         [TestCase]
         public void TestIncorrectMovement()
