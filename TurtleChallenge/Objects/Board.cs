@@ -28,10 +28,7 @@ namespace TurtleChallenge.Objects
             BoardLength = boardSettings.ElementAt(1);
             Box = new BoardBox[BoardWidth, BoardLength];
 
-            foreach (var mine in mines)
-            {
-                Box[mine.Coordinates.CoordinateX, mine.Coordinates.CoordinateY].Mine = true;
-            }
+            foreach (var mine in mines) Box[mine.Coordinates.CoordinateX, mine.Coordinates.CoordinateY].Mine = true;
             
             Box[exit.Coordinates.CoordinateX, exit.Coordinates.CoordinateY].Exit = true;
             //default of boolean is false therefore no need to instantiate other values to false.

@@ -19,7 +19,7 @@ namespace TurtleChallenge.Objects
         /// </summary>
         /// <param name="boardSettings">a list of two integers containing the width and length of the board</param>
         /// <exception cref="Exception">Width or(and) Length less than 0</exception>
-        public void ValidateBoard (List<int> boardSettings)
+        public static void ValidateBoard (List<int> boardSettings)
         {
             BoardWidth = boardSettings.ElementAt(0);
             BoardLength = boardSettings.ElementAt(1);
@@ -32,7 +32,7 @@ namespace TurtleChallenge.Objects
         /// </summary>
         /// <param name="coordinates">The coordinates of the object to be checked</param>
         /// <exception cref="IndexOutOfRangeException">Coordinates are out of the board</exception>
-        public void InBoardValidation(Coordinates coordinates)
+        public static void InBoardValidation(Coordinates coordinates)
         {
             //checks that coordinates are within the board perimeter
             if (coordinates.CoordinateX >= BoardWidth 
@@ -49,7 +49,7 @@ namespace TurtleChallenge.Objects
         /// <param name="board">The fully constructed <see cref="Board"/></param>
         /// <param name="exit">The <see cref="Exit.Coordinates"/> on the <see cref="Board"/></param>
         /// <exception cref="Exception">Exit is a mine</exception>
-        public void IsExitAMine(Board board, Exit exit)
+        public static void IsExitAMine(Board board, Exit exit)
         {
             //checks that an exit is not also a mine
             if (board.IsExit(exit.Coordinates) == board.IsMine(exit.Coordinates))

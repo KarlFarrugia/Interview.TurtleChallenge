@@ -53,7 +53,7 @@ namespace TurtleChallenge.Objects
         private static Coordinates ObjectCoordinates(IList<int> obj)
         {
             var objCoordinate = new Coordinates {CoordinateX = obj[0], CoordinateY = obj[1]};
-            validation.InBoardValidation(objCoordinate);
+            Validation.InBoardValidation(objCoordinate);
             return objCoordinate;
         }
 
@@ -94,7 +94,7 @@ namespace TurtleChallenge.Objects
         {
             //Expected format: 5 4
             var boardSettings = lines.ElementAt(0).Split(' ').Select(int.Parse).ToList();
-            validation.ValidateBoard(boardSettings);
+            Validation.ValidateBoard(boardSettings);
             //Expected format: 1,1 1,3 3,3
             var mines = Mines(lines.ElementAt(1).Split(' ').ToList());
             //Expected format: 4 2
@@ -102,7 +102,7 @@ namespace TurtleChallenge.Objects
             var exit = new Exit(exitCoordinates);
             var board = new Board();
             board.CreateBoard(boardSettings, mines, exit);
-            validation.IsExitAMine(board, exit);
+            Validation.IsExitAMine(board, exit);
             return board;
         }
 

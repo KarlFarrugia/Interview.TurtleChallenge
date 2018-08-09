@@ -22,6 +22,7 @@ namespace TurtleChallenge.Objects.BoardComponents
             Coordinates = coordinates;
         }
         
+        /// <inheritdoc />
         /// <summary>
         /// The Coordinates for each Mine Component
         /// </summary>
