@@ -6,7 +6,7 @@ using TurtleChallenge.Objects.BoardComponents;
 namespace TurtleChallenge.Objects
 {
     /// <summary>
-    /// A class used to validate the game settings
+    /// A class used to validate the game settings and movements.
     /// </summary>
     public class Validation
     {
@@ -23,10 +23,8 @@ namespace TurtleChallenge.Objects
         {
             BoardWidth = boardSettings.ElementAt(0);
             BoardLength = boardSettings.ElementAt(1);
-            if (BoardLength < 0 || BoardWidth < 0)
-            {
-                throw new Exception("Invalid board parameters");
-            }
+            //checks board settings are both greater than 0
+            if (BoardLength < 0 || BoardWidth < 0) throw new Exception("Invalid board parameters");           
         }
 
         /// <summary>
@@ -36,10 +34,12 @@ namespace TurtleChallenge.Objects
         /// <exception cref="IndexOutOfRangeException">Coordinates are out of the board</exception>
         public void InBoardValidation(Coordinates coordinates)
         {
-            if (coordinates.CoordinateX >= BoardWidth || coordinates.CoordinateY >= BoardLength  || coordinates.CoordinateX < 0 || coordinates.CoordinateY < 0)
-            {
-                throw new IndexOutOfRangeException("Object out of board");
-            }
+            //checks that coordinates are within the board perimeter
+            if (coordinates.CoordinateX >= BoardWidth 
+                || coordinates.CoordinateY >= BoardLength
+                || coordinates.CoordinateX < 0 
+                || coordinates.CoordinateY < 0)
+                throw new IndexOutOfRangeException("Object out of board");            
         }
 
         /// <summary>
@@ -47,14 +47,13 @@ namespace TurtleChallenge.Objects
         /// occurs
         /// </summary>
         /// <param name="board">The fully constructed <see cref="Board"/></param>
-        /// <param name="exit">The exit <see cref="Coordinates"/> on the <see cref="Board"/></param>
+        /// <param name="exit">The <see cref="Exit.Coordinates"/> on the <see cref="Board"/></param>
         /// <exception cref="Exception">Exit is a mine</exception>
-        public void IsExitAMine(Board board, Coordinates exit)
+        public void IsExitAMine(Board board, Exit exit)
         {
-            if (board.IsExit(exit) == board.IsMine(exit))
-            {
-                throw new Exception("Exit cannot be a mine"); 
-            }
+            //checks that an exit is not also a mine
+            if (board.IsExit(exit.Coordinates) == board.IsMine(exit.Coordinates))
+                throw new Exception("Exit cannot be a mine");             
         }
         
         /// <summary>

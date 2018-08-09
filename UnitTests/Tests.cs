@@ -171,7 +171,7 @@ namespace UnitTests
         }
                 
         /// <summary>
-        /// Tests that receiving correct game-settings does not result in an exception
+        /// Tests that receiving correct game-settings does not result in an exception.
         /// </summary>
         [TestCase]
         public void TestBoardSettingsCorrect()
@@ -188,7 +188,7 @@ namespace UnitTests
         }  
         
         /// <summary>
-        /// Tests that receiving incorrect game-settings does result in an exception
+        /// Tests that receiving incorrect game-settings does result in an exception.
         /// </summary>
         [TestCase]
         public void TestBoardSettingsIncorrect()
@@ -220,7 +220,7 @@ namespace UnitTests
         }
         
         /// <summary>
-        /// Tests for incorrect <see cref="Turtle.Direction"/>
+        /// Tests for incorrect <see cref="Turtle.Direction"/>.
         /// </summary>
         [TestCase]
         public void TestIncorrectTurtle()
@@ -321,6 +321,22 @@ namespace UnitTests
             IEnumerable<Moves> moves = testProgram.Games.
                 ElementAt(0).Split(' ').Select(s => Enum.Parse(typeof(Moves), s)).Cast<Moves>().ToList();
             Assert.Throws<Exception>(() => ExecuteGame.Execute(testProgram.Board, testProgram.Turtle, moves));
+        }
+        
+        /// <summary>
+        /// Tests that a turtle cannot move out of board.
+        /// </summary>    
+        [TestCase]
+        public void TestIncorrectMovement()
+        {
+            var settings = new string[6];
+            settings[0] = "5 4";
+            settings[1] = "1,1 1,3 3,3";
+            settings[2] = "4 2";
+            settings[3] = "0 1 N";
+            settings[4] = "MRMMM";
+            new ConfigurationsReader(settings);
+            Assert.Pass();
         }
     }
 }

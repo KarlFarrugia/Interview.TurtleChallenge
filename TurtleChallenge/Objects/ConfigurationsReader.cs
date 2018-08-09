@@ -17,7 +17,7 @@ namespace TurtleChallenge.Objects
         public IEnumerable<string> Games { get; private set; }
         private static Validation validation { get; set; }
         /// <summary>
-        /// Default constructor used for unit testing since it is much more reabable to have a string array than
+        /// This constructor is used for unit testing since it is much more readable to have a string array than
         /// different testfiles for each unit test.
         /// </summary>
         /// <param name="lines">A string containing the game-settings</param>
@@ -76,7 +76,7 @@ namespace TurtleChallenge.Objects
         /// Used to convert a string list to coordinates by calling the <see cref="MineCoordinates"/> method and then
         /// the coordinates are used to create a list of Mines
         /// </summary>
-        /// <param name="mines">A list mine coordinates</param>
+        /// <param name="mines">A list of mine coordinates</param>
         /// <returns>A list of mine objects</returns>
         private static IEnumerable<Mine> Mines(IEnumerable<string> mines)
         {
@@ -102,7 +102,7 @@ namespace TurtleChallenge.Objects
             var exit = new Exit(exitCoordinates);
             var board = new Board();
             board.CreateBoard(boardSettings, mines, exit);
-            validation.IsExitAMine(board, exitCoordinates);
+            validation.IsExitAMine(board, exit);
             return board;
         }
 

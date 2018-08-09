@@ -3,6 +3,9 @@
 namespace TurtleChallenge.Objects.BoardComponents
 {
     /// <inheritdoc />
+    /// <summary>
+    /// The Exit object on the board is represented using this class
+    /// </summary>
     public class Exit : IBoardComponentInterface
     {
         /// <summary>

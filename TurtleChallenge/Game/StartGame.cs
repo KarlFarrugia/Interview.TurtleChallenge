@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TurtleChallenge.Objects;
+﻿using TurtleChallenge.Objects;
 
 namespace TurtleChallenge.Game
 {
+    /// <summary>
+    /// This class loads the game configurations and then executes the turtle game
+    /// </summary>
     public static class StartGame
     {
         /// <summary>
@@ -15,13 +15,9 @@ namespace TurtleChallenge.Game
         /// <param name="file">As per requirement args is expecting a path to a file</param>
         public static void Game(string file)
         {
-            var turtleProgram = new ConfigurationsReader(file);
-            for (var i = 0; i < turtleProgram.Games.Count(); i++)
-            {
-                IEnumerable<Moves> moves = turtleProgram.Games.
-                    ElementAt(i).Split(' ').Select(s => Enum.Parse(typeof(Moves), s)).Cast<Moves>().ToList();
-                Console.WriteLine("Sequence " + (i + 1) + ": " + ExecuteGame.Execute(turtleProgram.Board, turtleProgram.Turtle, moves));
-            }
+            var gameConfiguration = new ConfigurationsReader(file);
+            var turtleGame = new ExecuteGame(gameConfiguration.Games);
+            turtleGame.ExecuteGames(gameConfiguration.Board, gameConfiguration.Turtle, gameConfiguration.Games);
         }
     }
 }

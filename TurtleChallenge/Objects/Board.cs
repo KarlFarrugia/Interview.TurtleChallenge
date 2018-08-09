@@ -10,13 +10,13 @@ namespace TurtleChallenge.Objects
     /// </summary>
     public class Board
     {
-        internal int BoardWidth { get; set; }
-        internal int BoardLength { get; set; }
+        private int BoardWidth { get; set; }
+        private int BoardLength { get; set; }
         private BoardBox[,] Box { get; set; }
 
         /// <summary>
         /// The CreateBoard method takes the dimensions of the board, the list of mine <see cref="Coordinates"/> and the
-        /// exit <see cref="Coordinates"/> 
+        /// exit <see cref="Coordinates"/>.
         /// </summary>
         /// <param name="boardSettings">This list contains the board length and width used to create the board area
         ///                             </param>

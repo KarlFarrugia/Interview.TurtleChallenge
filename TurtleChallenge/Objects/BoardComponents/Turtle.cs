@@ -34,7 +34,7 @@ namespace TurtleChallenge.Objects.BoardComponents
         }
 
         /// <summary>
-        /// Takes the current turtle <see cref="Direction"/> and rotates it clockwise to the right.
+        /// Takes the current turtle <see cref="Direction"/> and rotates it clockwise.
         /// </summary>
         /// <returns>The <see cref="Objects.Direction"/> after performing a right rotation</returns>
         /// <exception cref="ArgumentOutOfRangeException">Default Exception if case does not match</exception>
@@ -56,7 +56,7 @@ namespace TurtleChallenge.Objects.BoardComponents
         }
         
         /// <summary>
-        /// Takes the current turtle <see cref="Direction"/> and rotates it anticlockwise to the left.
+        /// Takes the current turtle <see cref="Direction"/> and rotates it anticlockwise.
         /// </summary>
         /// <returns>The <see cref="Objects.Direction"/> after performing a left rotation</returns>
         /// <exception cref="ArgumentOutOfRangeException">Default Exception if case does not match</exception>

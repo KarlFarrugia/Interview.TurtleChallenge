@@ -4,11 +4,14 @@ using TurtleChallenge.Objects.BoardComponents;
 
 namespace TurtleChallenge.Game
 {
+    /// <summary>
+    /// This class is responsible for moving the <see cref="Turtle"/> on the <see cref="Board"/>
+    /// </summary>
     public static class Player
     {
         /// <summary>
-        /// The action method will perform one move by the <see cref="Turtle"/> on the <see cref="Board"/>. Keeping in
-        /// mind that mutators are unattractive a new turtle object is returned after performing the required action.
+        /// The PerformMove method will perform one move by the <see cref="Turtle"/> on the <see cref="Board"/>. Keeping 
+        /// in mind that mutators are unattractive a new turtle object is returned after performing the required action.
         /// The rotation actions are done without checks. However, the move action has a preaction check that checks if
         /// the move will lead to an out of board exception.
         /// </summary>
@@ -24,6 +27,7 @@ namespace TurtleChallenge.Game
             switch (move)
             {
                 case Moves.M:
+                    //checks if by moving the turtle remains within the board parameters
                     if (Validation.ValidateTurtleMove(turtle)) return new Turtle(turtle.Move(), turtle.Direction);
                     throw new Exception("OUT OF BOARD");                    
                 case Moves.L:
