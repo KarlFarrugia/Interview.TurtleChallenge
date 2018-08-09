@@ -9,16 +9,22 @@
         <e p="Game" t="Include">
           <e p="ExecuteGame.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="StartGame.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="Objects" t="Include">
           <e p="Board.cs" t="Include" />
           <e p="BoardBox.cs" t="Include" />
+          <e p="BoardComponents" t="Include">
+            <e p="Exit.cs" t="Include" />
+            <e p="IBoardComponentInterface.cs" t="Include" />
+            <e p="Mine.cs" t="Include" />
+            <e p="Turtle.cs" t="Include" />
+          </e>
           <e p="ConfigurationsReader.cs" t="Include" />
           <e p="Coordinates.cs" t="Include" />
           <e p="Direction.cs" t="Include" />
           <e p="Moves.cs" t="Include" />
-          <e p="Turtle.cs" t="Include" />
           <e p="Validation.cs" t="Include" />
         </e>
         <e p="packages.config" t="Include" />

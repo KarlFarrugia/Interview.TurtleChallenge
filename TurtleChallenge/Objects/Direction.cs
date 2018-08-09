@@ -1,4 +1,4 @@
-﻿namespace TurtleChallenge
+﻿namespace TurtleChallenge.Objects
 {
     /// <summary>
     /// This enumerated class contains the set of possible directions

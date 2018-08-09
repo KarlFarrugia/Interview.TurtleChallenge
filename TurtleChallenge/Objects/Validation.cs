@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TurtleChallenge.Objects.BoardComponents;
 
 namespace TurtleChallenge.Objects
 {
@@ -18,7 +19,7 @@ namespace TurtleChallenge.Objects
         /// </summary>
         /// <param name="boardSettings">a list of two integers containing the width and length of the board</param>
         /// <exception cref="Exception">Width or(and) Length less than 0</exception>
-        public static void ValidateBoard (List<int> boardSettings)
+        public void ValidateBoard (List<int> boardSettings)
         {
             BoardWidth = boardSettings.ElementAt(0);
             BoardLength = boardSettings.ElementAt(1);
@@ -33,10 +34,9 @@ namespace TurtleChallenge.Objects
         /// </summary>
         /// <param name="coordinates">The coordinates of the object to be checked</param>
         /// <exception cref="IndexOutOfRangeException">Coordinates are out of the board</exception>
-        // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Global
-        public static void InBoardValidation(Coordinates coordinates)
+        public void InBoardValidation(Coordinates coordinates)
         {
-            if (coordinates.CoordinateX >= BoardWidth || coordinates.CoordinateY >= BoardLength || 0 > BoardWidth || 0 > BoardLength)
+            if (coordinates.CoordinateX >= BoardWidth || coordinates.CoordinateY >= BoardLength  || coordinates.CoordinateX < 0 || coordinates.CoordinateY < 0)
             {
                 throw new IndexOutOfRangeException("Object out of board");
             }
@@ -49,9 +49,9 @@ namespace TurtleChallenge.Objects
         /// <param name="board">The fully constructed <see cref="Board"/></param>
         /// <param name="exit">The exit <see cref="Coordinates"/> on the <see cref="Board"/></param>
         /// <exception cref="Exception">Exit is a mine</exception>
-        public static void IsExitAMine(Board board, Coordinates exit)
+        public void IsExitAMine(Board board, Coordinates exit)
         {
-            if (board.isExit(exit) == board.isMine(exit))
+            if (board.IsExit(exit) == board.IsMine(exit))
             {
                 throw new Exception("Exit cannot be a mine"); 
             }
@@ -70,13 +70,13 @@ namespace TurtleChallenge.Objects
             switch (turtle.Direction)
             {
                 case Direction.N:
-                    return turtle.TurtleCoordinateY != 0;
+                    return turtle.Coordinates.CoordinateY != 0;
                 case Direction.E:
-                    return turtle.TurtleCoordinateX != BoardWidth;
+                    return turtle.Coordinates.CoordinateX != BoardWidth;
                 case Direction.S:
-                    return turtle.TurtleCoordinateY != BoardLength;
+                    return turtle.Coordinates.CoordinateY != BoardLength;
                 case Direction.W:
-                    return turtle.TurtleCoordinateX != 0;
+                    return turtle.Coordinates.CoordinateX != 0;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

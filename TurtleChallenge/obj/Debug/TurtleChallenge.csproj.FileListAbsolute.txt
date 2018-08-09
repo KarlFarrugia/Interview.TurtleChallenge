@@ -1,0 +1,8 @@
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\obj\Debug\TurtleChallenge.csprojResolveAssemblyReference.cache
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\bin\Debug\TurtleChallenge.exe
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\bin\Debug\TurtleChallenge.pdb
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\bin\Debug\nunit.framework.dll
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\bin\Debug\nunit.framework.pdb
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\bin\Debug\nunit.framework.xml
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\obj\Debug\TurtleChallenge.exe
+C:\Users\Owner\RiderProjects\TurtleChallenge\TurtleChallenge\obj\Debug\TurtleChallenge.pdb

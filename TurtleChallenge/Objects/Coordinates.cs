@@ -1,4 +1,4 @@
-﻿namespace TurtleChallenge
+﻿namespace TurtleChallenge.Objects
 {
     /// <summary>
     /// A class structure containing the X and Y coordinates of an object

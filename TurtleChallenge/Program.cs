@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using TurtleChallenge.Objects;
+﻿using TurtleChallenge.Game;
 
 namespace TurtleChallenge
  {
@@ -13,22 +10,12 @@ namespace TurtleChallenge
      {
          /// <summary>
          /// The main method starts off the turtle program by receiving a command line argument, which denotes the path
-         /// to the game-settings file.
-         ///
-         /// Upon loading the file through the <see cref="ConfigurationsReader"/> class the program will start
-         /// iterating through every sequence of moves and calling the <see cref="ExecuteGame"/> class which will output
-         /// the result to console.
+         /// to the game-settings file, and calls the <see cref="StartGame"/> class to start the game
          /// </summary>
          /// <param name="args">As per requirement args is expecting a path to a file</param>
          public static void Main(string[] args)
          {
-             ConfigurationsReader turtleProgram = new ConfigurationsReader(args[0]);
-             for (var i = 0; i < turtleProgram.Games.Count(); i++)
-             {
-                 IEnumerable<Moves> moves = turtleProgram.Games.
-                     ElementAt(i).Split(' ').Select(s => Enum.Parse(typeof(Moves), s)).Cast<Moves>().ToList();
-                 Console.WriteLine("Sequence " + (i + 1) + ": " + ExecuteGame.Execute(turtleProgram.Board, turtleProgram.Turtle, moves));
-             }
+             StartGame.Game(args[0]);
          }
      }
  }

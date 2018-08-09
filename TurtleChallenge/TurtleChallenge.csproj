@@ -45,13 +45,17 @@
   <ItemGroup>
     <Compile Include="Game\ExecuteGame.cs" />
     <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\StartGame.cs" />
     <Compile Include="Objects\Board.cs" />
     <Compile Include="Objects\BoardBox.cs" />
+    <Compile Include="Objects\BoardComponents\Exit.cs" />
+    <Compile Include="Objects\BoardComponents\IBoardComponentInterface.cs" />
+    <Compile Include="Objects\BoardComponents\Mine.cs" />
+    <Compile Include="Objects\BoardComponents\Turtle.cs" />
     <Compile Include="Objects\ConfigurationsReader.cs" />
     <Compile Include="Objects\Coordinates.cs" />
     <Compile Include="Objects\Direction.cs" />
     <Compile Include="Objects\Moves.cs" />
-    <Compile Include="Objects\Turtle.cs" />
     <Compile Include="Objects\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
